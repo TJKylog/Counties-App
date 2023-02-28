@@ -1,0 +1,17 @@
+<h2>Por capital</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-buscar-input placeholder="Buscar capital" (onEnter)="buscar($event)" (onDebounce)="sugerencias( $event )"></app-buscar-input>
+    </div>
+</div>
+<hr>
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontró la capital
+</div>
+
+<div *ngIf="paises.length != 0" class="row">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
